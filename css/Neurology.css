@@ -1,0 +1,58 @@
+        .content{
+            height: 600px;
+        }
+        .content .neu{
+            font:25px 微软雅黑;
+            height:80px;   
+            background: #6dcca4;
+            line-height: 80px;
+            color:#fdfffe;
+        }
+        .content .box980{
+            padding-top: 80px;
+        }
+        #left{
+            float: left;
+            margin-right: 30px;
+        }
+        #left img{
+            width: 450px;
+            height: 400px;
+        }
+        #right{
+            float: right;
+            width:480px;
+        }
+        #right h4{
+            font-size: 32px;
+            margin-left:10px;
+            color:#2190f2;
+        }
+        #right .nr{
+            display: block;
+            margin-top: 15px;
+            font-size: 18px ;
+            line-height: 1.5em;
+            text-align: justify;
+            color:#999;
+        }
+        #right a.more{
+            display: inline-block;
+            background: #e13a44;
+            padding:1em 2.8em;
+            margin-top: 24px;
+            border-radius: 15px;
+            font-size: 18px;
+            color: #fff;
+        }
+        #right a.more:hover{
+            animation:light 1s ease-in-out infinite alternate;
+        }
+        #right .final{
+            float:right;
+            font-weight: 800;
+            margin-left:30px;
+            margin-top: 34px;
+            line-height: 20px;
+            color:#606060;
+        }

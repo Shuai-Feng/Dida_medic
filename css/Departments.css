@@ -1,0 +1,44 @@
+        .content{
+            box-sizing: border-box;
+            padding-top: 80px;
+            height: 500px;
+            font-family: Comfortaa; 
+        }
+        .content .dep{
+            font: 50px 宋体;
+            height: 80px;
+            line-height: 80px;
+            background: #6dcca4;
+            text-align: justify;
+            color: #fff;
+        }
+        #p1{
+            float: left;
+            border-radius: 5px;
+            padding:20px;
+        }
+        #p1 img{
+            height:170px;
+        }
+         #p1 h3{
+            margin-top: 12px;
+            margin-left: 10px;
+            font-size: 18px;
+            color:#178af0;
+        }
+        #p1 span{
+            display: block;
+            width: 280px;
+            margin-top: 15px;
+            color:#999;
+        }
+        #p1 a{
+            display: block;
+            margin-left: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color:#e13a44;
+        }
+        #p1 a:hover{
+            color:#4B1317;
+        }

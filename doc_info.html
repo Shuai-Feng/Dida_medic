@@ -1,0 +1,215 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>滴答医疗 医生管理</title>
+</head>
+<style>
+    body{
+        padding-top: 50px;
+    }
+    /* 使用弹性布局*/
+    .content{
+        display:flex;
+        flex-direction: row;
+        height: 740px;
+    }
+    .small{
+        font-size: 12px;
+    }
+
+
+    #datebar{
+        background-color: #191b1d;
+        flex:1.5;
+    }
+    #datebar ul li{
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        color: #617182;
+
+        transition: 0.4s ease;
+    }
+    #datebar ul li:hover{
+        color: #fff;
+    }
+    /* 右侧患者信息 */
+    #diginfo{
+        flex:8;
+        padding: 20px 20px 20px 20px;
+    }
+    #pt-table{
+        border-radius: 10px;
+    }
+    #dig-table tr td.active{
+        width: 150px;
+    }
+    #diginfo .panel-footer{
+        text-align: right;
+    }
+    #dig-date{
+        margin-right: 20px;
+    }
+</style>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+    var dno=sessionStorage.getItem("dno");
+    // var dno="00001"
+    if(!(dno)){
+        location.href="doc_log.html";
+    }
+    $(function(){
+        var bl;
+        // 存储病例的变量
+        $.post({
+            url:"hzinfo/data/hz_diagnoise.php?action=docinfo",
+            data:{dno:dno},
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                data=data.data;
+                // 显示标题栏中属性
+                $("#dname").text(data[0].dname);
+                $("#dtno").text(data[0].dno);
+            }
+        })
+        // 患者病人信息
+        function docdig(){
+            $.post({
+                url:"hzinfo/data/hz_diagnoise.php?action=docdig",
+                data:{dno:dno},
+                dataType:"json",
+                success:function(data){
+                    bl=data.data;
+                    // console.log(bl);
+                    $.each(data.data,function(index,elem){
+                        $("#datebar ul").append($("<li>").text(elem.diadate+"  "+"患者姓名 "+elem.pname).attr("data-diano",elem.diano));
+                    })
+                },complete:function(){
+                    $("#datebar li:first").click();
+                }
+            })
+        }
+        docdig();
+
+        $("#datebar").on("click","li",function(){
+            var _this=$(this).attr("data-diano");
+            $.each(bl,function(index,elem){
+                if(_this==elem.diano){
+                    $("#diginfo .panel").attr("data-diano",elem.diano);
+
+                    $("#dig-diano").text(elem.diano);
+                    $("#dig-dname").text(elem.dname);
+                    $("#dig-digresult").text(elem.digresult);
+                    $("#dig-date").text(elem.diadate);
+                    $("#dig-dept").text(elem.dept);
+
+                    $("#t-pno").text(elem.pno);
+                $("#t-pname").text(elem.pname);
+                $("#t-page").text(elem.page);
+                $("#t-pcell").text(elem.pcell);
+                }
+            })
+        });
+
+        // 诊断信息的提交按钮
+        $("#btn-submit").click(function(){
+            var diano=$(this).parent().parent().attr("data-diano");
+            // location=location;
+            var digresult=$("#dig-digresult").val();
+            console.log(diano,digresult);
+            $.post({
+                url:"data/dig_update.php?action=res",
+                data:{digresult:digresult,diano:diano},
+                dataType:"json",
+                success:function(data){
+                    console.log(data);
+                },complete(){
+                   location=location;
+                }
+            })
+        });
+
+        $("#logout").click(function(){
+            sessionStorage.setItem("dno","")
+        });
+    })
+</script>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">滴答医疗-医生界面</a>
+                <a href="" id="logout" class="navbar-brand small">注销</a>
+            </div>
+
+            <div  style="display: block; float: right;">
+                 <a href="" class="navbar-brand fr">医生姓名:<span id="dname"></span></a>
+                <a href="" class="navbar-brand fr">医生编号:<span id="dtno"></span></a>
+            </div>
+           
+        </div>
+    </nav>
+    <div class="content">
+        <div id="datebar">
+            <ul>
+
+            </ul>
+        </div>
+        <div id="diginfo">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    患者个人信息
+                </div>
+                <div class="panel-body">
+                    <table id="pt-table" class="table table-bordered">
+                        <tr>
+                            <td class="active" >患者编号</td>
+                            <td id="t-pno"></td>
+                            <td class="active" >患者姓名</td>
+                            <td id="t-pname"></td>
+                        </tr>
+                    </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            就诊信息
+                        </div>
+                        <div class="panel-body">
+                            
+        
+                            <table id="dig-table" class="table table-bordered">
+                                <tr>
+                                    <td class="active" colspan="1" >病例编号</td>
+                                    <td id="dig-diano" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="active">医生姓名</td>
+                                    <td id="dig-dname"colspan="2"></td>
+                                    <td class="active">科室</td>
+                                    <td id="dig-dept" colspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="active" colspan="1">诊断结果</td>
+                                    <td  colspan="4" style="text-align: center;"><textarea name=""  class="form-control" id="dig-digresult" cols="30" style="width: 100%;"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    就诊日期：<span id="dig-date"></span>
+                    <button class="btn btn-primary" id="btn-submit">提交</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

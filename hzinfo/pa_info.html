@@ -1,0 +1,190 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>滴答医疗 患者信息查询</title>
+</head>
+<style>
+    body{
+        padding-top: 50px;
+    }
+    /* 使用弹性布局*/
+    .content{
+        display:flex;
+        flex-direction: row;
+        height: 740px;
+    }
+    .small{
+        font-size: 12px;
+    }
+    #datebar{
+        background-color: #191b1d;
+        flex:1.5;
+    }
+    #datebar ul li{
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        color: #617182;
+
+        transition: 0.4s ease;
+    }
+    #datebar ul li:hover{
+        color: #fff;
+    }
+    /* 右侧患者信息 */
+    #diginfo{
+        flex:8;
+        padding: 20px 20px 20px 20px;
+    }
+    /* #p-panel .panel-heading{
+       
+    } */
+    #pt-table{
+        border-radius: 10px;
+    }
+    #dig-table tr td.active{
+        width: 150px;
+    }
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+    var pno=sessionStorage.getItem("pno");
+    if(!(pno)){
+        location.href="pa_log.html";
+    }
+    $(function(){
+        var bl;
+        // 存储病例的变量
+        // 患者病人信息
+
+        $.post({
+            url:"data/hz_diagnoise.php?action=info",
+            data:{pno:pno},
+            dataType:"json",
+            success:function(data){
+                // console.log(data);
+                data=data.data;
+                // 显示标题栏中属性
+                $("#ptname").text(data[0].pname);
+                $("#ptno").text(data[0].pno);
+
+                // 显示在患者表格中的内容
+                $("#t-pno").text(data[0].pno);
+                $("#t-pname").text(data[0].pname);
+                $("#t-page").text(data[0].page);
+                $("#t-pcell").text(data[0].pcell);
+            }
+        })
+        // 获取患者病例信息
+        $.post({
+            url:"data/hz_diagnoise.php?action=infodig",
+            data:{pno:pno},
+            dataType:"json",
+            success:function(data){
+                bl=data.data;
+                // console.log(bl);
+                $.each(data.data,function(index,elem){
+                    $("#datebar ul").append($("<li>").text(elem.diadate+"  "+"主治医生 "+elem.dname).attr("data-diano",elem.diano));
+                })
+            }
+        })
+
+        $("#datebar").on("click","li",function(){
+            var _this=$(this).attr("data-diano");
+            $.each(bl,function(index,elem){
+                if(_this==elem.diano){
+                    $("#dig-diano").text(elem.diano);
+                    $("#dig-dname").text(elem.dname);
+                    $("#dig-digresult").text(elem.digresult);
+                    $("#dig-date").text(elem.diadate);
+                    $("#dig-dept").text(elem.dept);
+                }
+            })
+        });
+
+        $("#logout").click(function(){
+            sessionStorage.setItem("pno","")
+        });
+
+
+    })
+</script>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">滴答医疗-患者病历查询</a>
+                <a href="" id="logout" class="navbar-brand small">注销</a>
+            </div>
+
+            <div  style="display: block; float: right;">
+                 <a href="" class="navbar-brand fr">患者姓名:<span id="ptname"></span></a>
+                <a href="" class="navbar-brand fr">患者编号:<span id="ptno"></span></a>
+            </div>
+           
+        </div>
+    </nav>
+    <div class="content">
+        <div id="datebar">
+            <ul>
+
+            </ul>
+        </div>
+        <div id="diginfo">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    患者个人信息
+                </div>
+                <div class="panel-body">
+                    <table id="pt-table" class="table table-bordered">
+                        <tr>
+                            <td class="active" >患者编号</td>
+                            <td id="t-pno"></td>
+                            <td class="active" >患者姓名</td>
+                            <td id="t-pname"></td>
+                        </tr>
+                        <tr>
+                            <td class="active" >患者年龄</td>
+                            <td id="t-page"></td>
+                            <td class="active" >联系方式</td>
+                            <td id="t-pcell"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    就诊信息
+                </div>
+                <div class="panel-body">
+                    <table id="dig-table" class="table table-bordered">
+                        <tr>
+                            <td class="active" colspan="1" >病例编号</td>
+                            <td id="dig-diano" colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td class="active">医生姓名</td>
+                            <td id="dig-dname"colspan="2"></td>
+                            <td class="active">科室</td>
+                            <td id="dig-dept" colspan="2"></td>
+                        </tr>
+                        <tr> 
+                            <td class="active" colspan="1">诊断结果</td>
+                            <td id="dig-digresult" colspan="4"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    就诊日期：<span id="dig-date"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
