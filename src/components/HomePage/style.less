@@ -1,0 +1,61 @@
+@import '~@/style/mix.less';
+
+.banner {
+  // 轮播图按钮的样式
+  .swiper-pagination-bullet {
+    border: 2px solid white;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+  }
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  .swiper-slide {
+    position: relative;
+    height: 500px;
+    background: url() no-repeat 0% 0%;
+    background-size: 100%;
+
+    .slide_title,
+    .slide_text {
+      position: relative;
+      z-index: 999;
+      color: #fff;
+    }
+    @slide_title_top: 30%;
+    .slide_title {
+      top: @slide_title_top;
+      left: calc(10%);
+      font-size: 80px;
+    }
+    .slide_text {
+      top: calc(@slide_title_top + 10px);
+      left: calc(10%);
+      font-size: 24px;
+      color: #fff;
+    }
+
+    // 绘制背景蒙版
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    &:nth-child(n) {
+      background-image: url('~@pub/img/banner1.jpg');
+    }
+    &:nth-child(2n) {
+      background-image: url('~@pub/img/banner2.jpg');
+      background-position: -80px -80px;
+    }
+    &:nth-child(3n) {
+      background-image: url('~@pub/img/banner3.jpg');
+    }
+  }
+}
