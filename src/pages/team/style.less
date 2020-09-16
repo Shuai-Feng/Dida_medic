@@ -1,0 +1,54 @@
+.TeamPage {
+  background: #fff;
+  width: 100%;
+  .teamHeader {
+    padding: 30px 0px;
+    background: linear-gradient(45deg, #0162c8, #55e7fc);
+    text-align: center;
+    h1,
+    h2 {
+      color: #fff;
+    }
+  }
+  .CardWrapper {
+    padding: 50px 0px;
+  }
+  .medicCard {
+    overflow: hidden;
+    border: 1px solid rgba(143, 143, 143, 0.2);
+    padding: 30px 20px;
+    font-family: '微软雅黑';
+    transition: 0.4s;
+    .description {
+      float: right;
+      width: 370px;
+      .title {
+        font-size: 24px;
+        float: left;
+        .subtitle {
+          font-size: 12px;
+          margin-left: 12px;
+          color: #b3b3b3;
+        }
+      }
+      .intro {
+        float: left;
+        margin-top: 14px;
+        clear: left;
+        text-indent: 2em;
+        font-size: 14px;
+        color: #b3b3b3;
+      }
+    }
+    &:hover {
+      background-color: #09f;
+      .title {
+        color: #fff;
+      }
+      .description .intro,
+      .description .subtitle {
+        color: #7ccefa;
+      }
+    }
+  }
+}

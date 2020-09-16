@@ -17,6 +17,7 @@ const Banner: React.FunctionComponent<IBannerProps> = props => {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      effect: 'fade',
       loop: true,
     });
   }, []);
@@ -26,7 +27,7 @@ const Banner: React.FunctionComponent<IBannerProps> = props => {
       <div className="swiper-container">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
-            <h1 className="slide_title">方便即用</h1>
+            <h1 className="slide_title">榔头科技</h1>
             <p className="slide_text">随时随地 每时每刻</p>
           </div>
           <div className="swiper-slide">

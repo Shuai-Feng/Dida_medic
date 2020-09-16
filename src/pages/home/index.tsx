@@ -35,7 +35,7 @@ const Home: React.FunctionComponent<{}> = props => {
   ];
 
   return (
-    <div>
+    <div className="homePage">
       {/* 很大一块轮播图 */}
       <div className="banner">
         <Banner />

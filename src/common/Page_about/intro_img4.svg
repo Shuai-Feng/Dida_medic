@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="282px" viewBox="0 0 371 282" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>手机实名认证</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="15.387807%" x2="50%" y2="61.303853%" id="linearGradient-5">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="14.6966117%" y1="22.8248708%" x2="50%" y2="77.1751292%" id="linearGradient-6">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#59D0FC" offset="0%"></stop>
+            <stop stop-color="#4B79FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#4B79FF" offset="0%"></stop>
+            <stop stop-color="#59D0FC" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="中昱购买官网" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-1717.000000, -1833.000000)">
+            <g id="手机实名认证" transform="translate(1718.000000, 1804.000000)">
+                <polygon id="路径-36复制-2" fill-opacity="0.13" fill="url(#linearGradient-1)" points="40 228.093689 185 310.157164 330 228.093689 190.790037 145.157164"></polygon>
+                <polygon id="路径-36复制" stroke="url(#linearGradient-2)" stroke-width="2" fill-opacity="0.17" fill="url(#linearGradient-2)" points="4 181.204804 185.5 284.157164 367 181.204804 192.747529 77.1571641"></polygon>
+                <path d="M0,149.215387 L185,254.157164 L370,149.215387 L192.387289,43.1571641 L0,149.215387 Z" id="路径-36" stroke="url(#linearGradient-3)" stroke-width="2" stroke-dasharray="3"></path>
+                <path d="M99,80.1571641 L99,232.374636 L269.069419,229.979641 L269.069419,80.1571641 C216.091621,111.899962 187.694847,128.248467 183.879096,129.202679 C180.063345,130.156891 151.770313,113.808386 99,80.1571641 Z" id="路径-37复制" fill="url(#linearGradient-4)"></path>
+                <path d="M254.293395,33.9458116 C254.22439,32.9817798 253.771166,32.1369828 253.094185,31.5504452 C252.417205,30.9639076 251.516468,30.6356292 250.552436,30.7046347 L171.479795,36.3646617 C166.280246,36.7368459 161.389785,38.5137397 157.258013,41.3831119 C153.126241,44.252484 149.753156,48.2143345 147.58836,52.956432 L113.88396,126.78765 C113.63539,127.332154 113.530616,127.931307 113.57965,128.527853 C113.658826,129.491103 114.120941,130.33107 114.804074,130.91043 C115.487206,131.48979 116.391358,131.808544 117.354608,131.729368 L204.17362,124.593139 C206.761689,124.380408 209.194048,123.483706 211.25534,122.052555 C213.316632,120.621403 215.006856,118.655803 216.110656,116.305274 L253.970402,35.6834196 C254.22494,35.1413849 254.33615,34.543108 254.293395,33.9458116 Z" id="矩形复制" stroke="url(#linearGradient-6)" fill="url(#linearGradient-5)" transform="translate(186.500000, 80.657164) rotate(-325.000000) translate(-186.500000, -80.657164) "></path>
+                <path d="M168.86777,94 C160.174533,88.2436166 155.205324,84.1642926 153.960141,81.762028 C152.092368,78.1586311 152.867144,74.6636737 157.012056,73.003194 C161.156969,71.3427142 172.884953,74.9595697 174.591451,74.9595697 C176.29795,74.9595697 177.82212,73.1672746 177.82212,71.9781822 C177.82212,70.7890898 177.028508,63.7946139 185.371296,58.5015395 C193.714083,53.2084651 200.153969,57.6661844 202.06663,59.5800644 C203.97929,61.4939444 205.777946,67.803374 200.646534,71.9781822 C195.515122,76.1529903 190.253284,77.8786685 185.875181,78.1586311 C184.217933,79.0818667 183.99026,79.629058 184.244573,81.1155427 C184.76683,84.1681872 187.428323,86.0556667 187.428323,87.2368895 C187.428323,88.4181123 185.288537,89.9424485 184.244573,88.589669 C183.200608,87.2368895 182.408549,83.5551101 178.5,82.3353264 C174.591451,81.1155427 170.861068,82.6953593 168.86777,84.9661244 C167.538905,86.4799678 167.538905,89.4912597 168.86777,94 Z" id="路径-37" fill="#B6E8FD"></path>
+                <path d="M172,88.4165708 C173.82419,93.1652587 174.375593,96.4752067 173.65421,98.3464148 C173.65421,98.3464148 174.437205,98.8976099 176.003195,100 C187.450157,95.2434314 196.782425,92.8651471 204,92.8651471 C204,92.8651471 194.349463,89.5527445 181.059986,93.5984374 C181.059986,93.5984374 181.311663,89.3831808 179.310452,87.4344578 C177.309242,85.4857349 175.855173,85.9233061 174.317405,86.4374233 C173.292226,86.780168 172.519758,87.4398839 172,88.4165708 Z" id="路径-38" fill="#B6E8FD"></path>
+                <polygon id="路径-39" fill="url(#linearGradient-7)" points="188 237 212.143681 251.422867 211.306196 238.301758"></polygon>
+                <circle id="椭圆形" stroke="url(#linearGradient-8)" cx="318.5" cy="34.5" r="4.5"></circle>
+                <circle id="椭圆形复制" stroke="url(#linearGradient-8)" cx="16.5" cy="226.5" r="4.5"></circle>
+                <circle id="椭圆形复制-2" stroke="url(#linearGradient-8)" cx="70.5" cy="74.5" r="4.5"></circle>
+                <line x1="318.5" y1="39" x2="318.5" y2="89.1036313" id="直线" stroke="url(#linearGradient-9)" stroke-linecap="square"></line>
+                <line x1="16.5" y1="231" x2="16.5" y2="281.103631" id="直线复制" stroke="url(#linearGradient-9)" stroke-linecap="square"></line>
+                <line x1="70.5" y1="79" x2="70.5" y2="129.103631" id="直线复制-2" stroke="url(#linearGradient-9)" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>

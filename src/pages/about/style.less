@@ -1,10 +1,80 @@
+@import '~@/style/mix.less';
+
 .aboutPage {
-  .intro1 {
-    background: url('~@pub/img/d2.jpg') no-repeat;
+  .teamHeader {
+    padding: 30px 0px;
+    background: linear-gradient(45deg, #0162c8, #55e7fc);
+    text-align: center;
+    h1,
+    h2 {
+      color: #fff;
+    }
+  }
+  .hidden {
+    opacity: 0;
+  }
+  .intro {
+    .dbc_flex();
+    & * {
+      transition: 0.4s;
+    }
+    &.darkTheme {
+      background-color: #040d15;
+      color: #fff;
+      h1 {
+        color: #fff !important;
+      }
+    }
+    .box {
+      flex: 1;
+      padding: 100px 20px;
+      // background: red;
+      // border: 1px solid #fff;
+      &.leftimg,
+      &.rightimg {
+        text-align: center;
+        img {
+          width: 500px;
+          height: 300px;
+        }
+      }
+      &.rightimg {
+        text-align: left;
+      }
+      &.righttext,
+      &.lefttext {
+        font-family: '微软雅黑';
+        margin-left: 100px;
+        .description {
+          h1 {
+            color: #494949;
+            .subtitle {
+              margin-left: 10px;
+              color: #ccc;
+              font-size: 14px;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+          }
+          .line {
+            border-top: 2px solid rgba(123, 123, 123, 0.2);
+            width: 40%;
+            margin: 10px 0px;
+          }
+          .subtext {
+            width: 400px;
+            text-indent: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .long_intro1 {
+    background: url('~@/common/d2.jpg') no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     .wrapper {
-      padding: 100px 0px;
+      padding: 90px 0px;
       color: #fff;
       text-align: center;
       font-size: 16px;
