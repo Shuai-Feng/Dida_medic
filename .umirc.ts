@@ -10,6 +10,13 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  proxy: {
+    '/getIcon': {
+      target: 'http://q1.qlogo.cn/g?b=qq&nk=741023025&s=640',
+      changeOrigin: true,
+      pathRewrite: { '^/getIcon': '' },
+    },
+  },
   headScripts: [
     {
       src:

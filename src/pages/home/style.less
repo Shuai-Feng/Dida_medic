@@ -1,6 +1,32 @@
 @import '~@/style/mix.less';
 
 .homePage {
+  // 首页 第一部分介绍
+  .intro {
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+    background: #d5e1df;
+    .navlogo {
+      img {
+        width: 100px;
+      }
+    }
+    .subintro {
+      padding: 10px;
+      color: #737f7d;
+      h2 {
+        color: #494949;
+      }
+      p {
+        // 首行缩进两字符 再行高调大一点
+        text-indent: 2rem;
+        width: 700px;
+        margin: 0px auto 14px auto;
+        line-height: 1.8em;
+      }
+    }
+  }
+
   .recommend {
     overflow: hidden;
     text-align: left;
@@ -27,7 +53,7 @@
       font-size: 20px;
       // 阴影
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-      transition: 0.4s;
+      transition: 0.4s all;
       &:hover {
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1),
           0px 0px 8px rgba(255, 255, 255, 1),
@@ -38,29 +64,64 @@
     }
   }
 
-  // 首页 第一部分介绍
-  .intro {
-    padding: 20px 0px;
+  //首页商品部分介绍
+  .cargointro {
+    position: relative;
+    padding-top: 80px;
+    height: 400px;
+    background: url('~@/common/Page_home/bg_1.jpg');
+    background-size: cover;
     text-align: center;
-    background: #d5e1df;
-    .navlogo {
-      img {
-        width: 100px;
+    //对产品介绍banner及逆行简单规划
+    h1.title,
+    h2.subtitle {
+      color: #fff;
+      font-family: 微软雅黑;
+    }
+    h2.subtitle {
+      font-size: 16px;
+    }
+
+    //商品类别介绍框 -- 左右突出效果
+    .cargolist {
+      .dbc_abs();
+      top: 84%;
+      display: flex;
+      width: 1200px;
+      border-radius: 10px;
+      //白色背景加阴影
+      background-color: #fff;
+      box-shadow: 10px 0px 13px rgba(73, 73, 73, 0.2),
+        0px 10px 13px rgba(73, 73, 73, 0.2),
+        -10px 0px 13px rgba(73, 73, 73, 0.2);
+      li {
+        flex: 1;
+        height: 280px;
+        padding-top: 56px;
+        transition: 0.4s all;
+        border-radius: 10px;
+        font-family: 微软雅黑;
+        .iconfont {
+          font-size: 48px;
+        }
+        & * {
+          transition: 0.4s all;
+        }
+        &:hover {
+          background-color: #effff9;
+          .title,
+          .subtitle,
+          .iconfont {
+            color: #008b58;
+          }
+        }
       }
     }
-    .subintro {
-      padding: 10px;
-      color: #737f7d;
-      h2 {
-        color: #494949;
-      }
-      p {
-        // 首行缩进两字符 再行高调大一点
-        text-indent: 2rem;
-        width: 700px;
-        margin: 0px auto 14px auto;
-        line-height: 1.8em;
-      }
-    }
+  }
+
+  //商品详细介绍
+  .cargodetial {
+    height: 700px;
+    background: #fff;
   }
 }

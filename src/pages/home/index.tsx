@@ -9,6 +9,13 @@ interface textData {
   title: string;
   content: Array<string>;
 }
+interface cargoInfo {
+  id: number;
+  iconfont: string;
+  title: string;
+  subtitle: string;
+  router?: string;
+}
 const Home: React.FunctionComponent<{}> = props => {
   const introData: Array<textData> = [
     {
@@ -33,7 +40,50 @@ const Home: React.FunctionComponent<{}> = props => {
       ],
     },
   ];
-
+  const cargoDataList: Array<cargoInfo> = [
+    {
+      id: 1,
+      iconfont: 'icongovernment-line',
+      title: '城市管理',
+      subtitle: 'City',
+      router: '/cargo/city',
+    },
+    {
+      id: 2,
+      iconfont: 'iconbriefcase-4-line',
+      title: '智能办公',
+      subtitle: 'Office',
+      router: '/cargo/office',
+    },
+    {
+      id: 3,
+      iconfont: 'iconcreative-commons-by-fill',
+      title: '智能亲子',
+      subtitle: 'Parent',
+      router: '/cargo/parent',
+    },
+    {
+      id: 4,
+      iconfont: 'iconjiankong',
+      title: '智能监控',
+      subtitle: 'Monitor',
+      router: '/cargo/monitor',
+    },
+    {
+      id: 5,
+      iconfont: 'iconcustomer-service-2-line',
+      title: '智能语音',
+      subtitle: 'Voice',
+      router: '/cargo/voice',
+    },
+    {
+      id: 6,
+      iconfont: 'iconmedal-line',
+      title: '智能评分',
+      subtitle: 'Rating',
+      router: '/cargo/rate',
+    },
+  ];
   return (
     <div className="homePage">
       {/* 很大一块轮播图 */}
@@ -41,6 +91,7 @@ const Home: React.FunctionComponent<{}> = props => {
         <Banner />
       </div>
       {/* 介绍部分 */}
+
       <div className="recommend">
         <MgWrapper>
           <p>我们的服务更涵盖了衣食住行任何方面</p>
@@ -53,6 +104,7 @@ const Home: React.FunctionComponent<{}> = props => {
           </p>
         </MgWrapper>
       </div>
+
       <div className="intro">
         <MgWrapper>
           {introData.map((item: textData, index: number) => {
@@ -67,6 +119,25 @@ const Home: React.FunctionComponent<{}> = props => {
           })}
         </MgWrapper>
       </div>
+
+      <div className="cargointro">
+        <h1 className="title">我们的产品</h1>
+        <h2 className="subtitle">Our Cargo</h2>
+        <ul className="cargolist">
+          {cargoDataList.map((item: cargoInfo) => {
+            return (
+              <li>
+                <Link to={item.router + ''}>
+                  <span className={`iconfont ${item.iconfont}`}></span>
+                  <p className="title">{item.title}</p>
+                  <span className="subtitle">{item.subtitle}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="cargodetial"></div>
     </div>
   );
 };

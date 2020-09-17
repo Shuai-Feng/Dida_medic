@@ -24,7 +24,9 @@ const ContactPage: FunctionComponent<IContactPageProps> = props => {
         <h2>Contact Us</h2>
       </div>
       <div className="wrapper">
-        <div id="myMap" className="left"></div>
+        <div id="myMap" className="left">
+          欸？网络好像出了点问题
+        </div>
         <div className="right"></div>
       </div>
     </div>
