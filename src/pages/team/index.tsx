@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import MgWarpper from '@/components/mgCenter';
 import { Row, Col, Avatar } from 'antd';
+import axios from 'axios';
 import './style.less';
 
 interface ITeamPageProps {}
@@ -79,11 +80,16 @@ const TeamPage: FunctionComponent<ITeamPageProps> = props => {
     },
   ];
   //请求头像照片
+  let handleRequest = () => {
+    axios.get('/getIcon').then(res => {
+      console.log(res);
+    });
+  };
 
   let handleCardrender = (memberData: Array<any>) => {
     return memberData.map((item, index) => {
       return (
-        <Col span={12}>
+        <Col span={12} key={index}>
           <div className="medicCard">
             <Avatar
               size={120}
@@ -103,7 +109,9 @@ const TeamPage: FunctionComponent<ITeamPageProps> = props => {
       );
     });
   };
-
+  useEffect(() => {
+    handleRequest();
+  }, []);
   return (
     <div className="TeamPage">
       <div className="teamHeader">

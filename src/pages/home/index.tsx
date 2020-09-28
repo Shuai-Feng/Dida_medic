@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'umi';
 import MgWrapper from '@/components/mgCenter';
 import Banner from '@/components/HomePage/Banner';
@@ -124,9 +124,9 @@ const Home: React.FunctionComponent<{}> = props => {
         <h1 className="title">我们的产品</h1>
         <h2 className="subtitle">Our Cargo</h2>
         <ul className="cargolist">
-          {cargoDataList.map((item: cargoInfo) => {
+          {cargoDataList.map((item: cargoInfo, index: number) => {
             return (
-              <li>
+              <li key={index}>
                 <Link to={item.router + ''}>
                   <span className={`iconfont ${item.iconfont}`}></span>
                   <p className="title">{item.title}</p>

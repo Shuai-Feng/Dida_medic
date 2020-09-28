@@ -11,11 +11,53 @@
     }
   }
   .wrapper {
+    width: 100%;
+    display: flex;
     .left {
       height: 500px;
       width: 50%;
       background-color: #ccc;
       .dbc_flex();
+    }
+    .right {
+      position: relative;
+      background: #fff;
+      overflow: hidden;
+      width: 50%;
+      background: url('~@/common/d2.jpg') no-repeat;
+      background-size: cover;
+      .dbc_flex();
+      .right_wrapper {
+        font-family: 微软雅黑;
+        .myShadow();
+        border-radius: 10px 10px 10px 10px;
+        transition: 0.4s all;
+        padding: 60px 40px 100px 40px;
+        margin-bottom: -120px;
+        background-color: #fff;
+        &:hover {
+          border-radius: 100px 10px 10px 10px;
+        }
+        p {
+          margin-bottom: 10px;
+        }
+        input,
+        textarea {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 4px 10px;
+          border: 2px solid #ccc;
+        }
+        button {
+          width: 100%;
+          padding: 14px 0px;
+          border: none;
+          border-radius: 10px;
+          background: green;
+          color: #fff;
+        }
+      }
     }
   }
 }

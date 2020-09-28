@@ -1,4 +1,7 @@
-.Cargolayout {
+@import '~@/style/mix.less';
+
+.CargoPage {
+  //标题栏的样式
   .teamHeader {
     padding: 30px 0px;
     background: linear-gradient(45deg, #0162c8, #55e7fc);
@@ -6,6 +9,57 @@
     h1,
     h2 {
       color: #fff;
+    }
+  }
+  //赛选导航栏的样式
+  .filter {
+    .dbc_flex();
+    height: 50px;
+    width: 600px;
+    font-family: 微软雅黑;
+    margin-bottom: 12px;
+    //每个筛选按钮
+    .filterItem {
+      .iconfont {
+        margin-right: 8px;
+        transition: 0.4s all;
+      }
+      .dbc_flex();
+      flex: 1;
+      position: relative;
+      height: 100%;
+      transition: 0.4s;
+      margin-right: 28px;
+      font-size: 14px;
+      color: #4b535d;
+      //间隔为元素进行一下平行四边形效果
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.2s all;
+        transform: skewX(-45deg);
+        border-radius: 10px 20px 10px 20px;
+        border: 1px solid rgba(28, 28, 28, 0.2);
+      }
+
+      // 用于设置导航栏的选定
+      &:hover,
+      &.hover {
+        .neu_shadow();
+        &,
+        & .iconfont {
+          font-size: 18px;
+          color: orange;
+        }
+        &::before {
+          background: #4b535d;
+        }
+      }
     }
   }
 }

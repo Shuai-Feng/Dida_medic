@@ -1,4 +1,7 @@
 import { defineConfig } from 'umi';
+const path = require('path');
+const resolve = (dir: any) => path.resolve(__dirname, dir);
+
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
@@ -10,9 +13,14 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  chainWebpack(memo) {
+    memo.resolve.alias
+      .set('@common', resolve('src/common'))
+      .set('ppblic', resolve('public'));
+  },
   proxy: {
     '/getIcon': {
-      target: 'http://q1.qlogo.cn/g?b=qq&nk=741023025&s=640',
+      target: 'https://shuaifeng.xyz/myphp/dream.php',
       changeOrigin: true,
       pathRewrite: { '^/getIcon': '' },
     },
