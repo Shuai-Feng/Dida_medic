@@ -25,10 +25,19 @@ export default defineConfig({
       pathRewrite: { '^/getIcon': '' },
     },
   },
+  //分离React
+  externals: {
+    react: 'window.React',
+    'react-dom': 'window.ReactDOM',
+  },
+  scripts: [
+    'https://gw.alipayobjects.com/os/lib/react/16.13.1/umd/react.production.min.js',
+    'https://gw.alipayobjects.com/os/lib/react-dom/16.13.1/umd/react-dom.production.min.js',
+  ],
   headScripts: [
     {
       src:
-        'http://api.map.baidu.com/api?v=2.0&ak=n7GDsu4PuHcnt3Er3weXUeommL5ItQR1',
+        'https://api.map.baidu.com/api?v=2.0&ak=n7GDsu4PuHcnt3Er3weXUeommL5ItQR1&s=1',
       type: 'text/javascript',
     },
   ],

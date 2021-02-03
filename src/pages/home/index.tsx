@@ -17,6 +17,24 @@ interface cargoInfo {
   router?: string;
 }
 const Home: React.FunctionComponent<{}> = props => {
+  let debounce = (callback: Function, delay?: number) => {
+    let timer: any = null;
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(callback, delay || 1000);
+    };
+  };
+  useEffect(() => {
+    window.addEventListener(
+      'scroll',
+      debounce(() => {
+        console.log(123);
+      }, 1000),
+    );
+  }, []);
+
   const introData: Array<textData> = [
     {
       id: 1,
